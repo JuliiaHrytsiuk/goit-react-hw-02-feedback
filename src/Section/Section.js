@@ -1,20 +1,19 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { SectionTitle, SectionContainer } from "./Section.styled";
 
-class Section extends Component {
-  render() {
-    return (
-      <SectionContainer>
-        <SectionTitle>{this.props.title}</SectionTitle>
-        {this.props.children}
-      </SectionContainer>
-    );
-  }
-}
+const Section = ({ title, children }) => {
+  return (
+    <SectionContainer>
+      <SectionTitle>{title}</SectionTitle>
+      {children}
+    </SectionContainer>
+  );
+};
 
 Section.propTypes = {
   title: PropTypes.string.isRequired,
+  children: PropTypes.node,
 };
 
 export default Section;
